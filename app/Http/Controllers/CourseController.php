@@ -22,9 +22,21 @@ class CourseController extends Controller
     public function show(int $id)
     {
         $course = Course::where('id', $id)->with('chapters')->first();
+        $watched = auth()->user()->chapters;
 
         return Inertia::render('Courses/Show', [
-            'course' => $course
+            'course' => $course,
+            'watched' => $watched
         ]);
+    }
+
+    public function toggleProgress(Request $request)
+    {
+        $id = $request->input('chapterId');
+        $user = auth()->user();
+
+        $user->chapters()->toggle($id);
+
+        return $user->chapters;
     }
 }

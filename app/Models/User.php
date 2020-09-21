@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Course;
+use App\Models\Chapter;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -64,5 +65,10 @@ class User extends Authenticatable
     public function courses()
     {
         return $this->hasMany(Course::class);
+    }
+
+    public function chapters()
+    {
+        return $this->belongsToMany(Chapter::class, 'completions', 'user_id', 'chapter_id');
     }
 }

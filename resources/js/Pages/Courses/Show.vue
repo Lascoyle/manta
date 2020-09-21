@@ -10,9 +10,12 @@
 
             <div class="mt-6">
                 <ul v-for="(chapter, index) in this.courseShow.chapters" v-bind:key="chapter.id">
-                    <li class="mt-3">
-                        Chapitre n°{{ index + 1 }} - {{ chapter.title }}
-                        <button class="text-gray-500 focus:text-indigo-500 focus:outline-none" @click="switchChapter(index)">Voir le chapitre</button>
+                    <li class="mt-3 flex justify-between items-center">
+                        <div>
+                            Chapitre n°{{ index + 1 }} - {{ chapter.title }}
+                            <button class="text-gray-500 text-sm focus:text-indigo-500 focus:outline-none mx-2" @click="switchChapter(index)">Voir le chapitre</button>
+                        </div>
+                        <progress-button :chapter-id="chapter.id" :watched-chapters="watched"></progress-button>
                     </li>
                 </ul>
             </div>
@@ -22,13 +25,15 @@
 
 <script>
 import AppLayout from './../../Layouts/AppLayout'
+import ProgressButton from './ProgressButton'
 
 export default {
     components: {
-        AppLayout
+        AppLayout,
+        ProgressButton
     },
 
-    props : ['course'],
+    props : ['course', 'watched'],
 
     data() {
         return {
