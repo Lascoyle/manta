@@ -17,6 +17,9 @@
                             <jet-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
                                 Dashboard
                             </jet-nav-link>
+                            <jet-nav-link href="/courses" :active="$page.currentRouteName == 'courses.index'">
+                                Les formations
+                            </jet-nav-link>
                         </div>
                     </div>
 
