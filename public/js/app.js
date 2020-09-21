@@ -3428,6 +3428,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -26483,10 +26489,36 @@ var render = function() {
       ]),
       _vm._v(" "),
       _vm._l(this.coursesList, function(course) {
-        return _c("div", { key: course.id }, [
-          _c("div", [_vm._v(_vm._s(course.title))]),
-          _vm._v(" "),
-          _c("div", [_vm._v(_vm._s(course.description))])
+        return _c("div", { key: course.id, staticClass: "py-6" }, [
+          _c("div", { staticClass: "mx-8 bg-white rounded-lg shadow p-6" }, [
+            _c(
+              "div",
+              { staticClass: "mb-3 flex justify-between items-baseline" },
+              [
+                _c("h1", { staticClass: "text-2xl" }, [
+                  _vm._v(_vm._s(course.title))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-sm text-gray-400" }, [
+                  _vm._v("25 Chapitres")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-sm text-gray-500" }, [
+              _vm._v(_vm._s(course.description))
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass:
+                  "bg-indigo-600 rounded-md inline-block p-2 text-white text-sm mt-3 hover:bg-indigo-800",
+                attrs: { href: "#" }
+              },
+              [_vm._v("Voir la formation")]
+            )
+          ])
         ])
       })
     ],
