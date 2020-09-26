@@ -3582,6 +3582,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3610,6 +3613,9 @@ __webpack_require__.r(__webpack_exports__);
         description: null,
         video_url: null
       });
+    },
+    remove: function remove() {
+      this.form.chapters.pop();
     }
   }
 });
@@ -26609,7 +26615,15 @@ var render = function() {
                         _vm.$set(_vm.form, "title", $event.target.value)
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.$page.errors.title
+                    ? _c(
+                        "div",
+                        { staticClass: "bg-red-200 text-red-800 p-4" },
+                        [_vm._v(_vm._s(_vm.$page.errors.title[0]))]
+                      )
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "mb-4" }, [
@@ -26647,7 +26661,15 @@ var render = function() {
                         _vm.$set(_vm.form, "description", $event.target.value)
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _vm.$page.errors.description
+                    ? _c(
+                        "div",
+                        { staticClass: "bg-red-200 text-red-800 p-4" },
+                        [_vm._v(_vm._s(_vm.$page.errors.description[0]))]
+                      )
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
                 _c(
@@ -26774,7 +26796,7 @@ var render = function() {
                             }
                           ],
                           staticClass:
-                            "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                            "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-10 leading-tight focus:outline-none focus:shadow-outline",
                           attrs: { id: "title-" + _vm.video_url, type: "text" },
                           domProps: {
                             value: _vm.form.chapters[index].video_url
@@ -26798,20 +26820,39 @@ var render = function() {
                   2
                 ),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "py-2 px-4 bg-green-600 rounded my-2 text-white block",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.add($event)
-                      }
-                    }
-                  },
-                  [_vm._v("+")]
-                ),
+                _vm.form.chapters.length < 15
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "py-2 px-4 bg-green-600 rounded my-2 text-white block",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.add($event)
+                          }
+                        }
+                      },
+                      [_vm._v("+")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.form.chapters.length > 1
+                  ? _c(
+                      "button",
+                      {
+                        staticClass:
+                          "py-2 px-4 bg-red-600 rounded my-2 text-white block",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.remove($event)
+                          }
+                        }
+                      },
+                      [_vm._v("🗑️")]
+                    )
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "button",

@@ -34,7 +34,22 @@ class CourseController extends Controller
 
     public function store(Request $request)
     {
-        Course::create($request->all());
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'chapters' => ['required', 'array'],
+            'chapters.*.title' => 'required',
+            'chapters.*.description' => 'required',
+            'chapters.*.video_url' => 'required',
+        ]);
+
+        $course = Course::create($request->all());
+
+        foreach($request->input('chapters') as $chapter)
+        {
+            $chapter['course_id'] = $course->id;
+            Chapter::create($chapter);
+        }
 
         return Redirect::route('dashboard')->with('success', 'Félicitations, la formation a bien été mise en ligne.');
     }

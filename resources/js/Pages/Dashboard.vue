@@ -18,6 +18,7 @@
                         Titre de la formation
                       </label>
                       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" v-model="form.title">
+                      <div class="bg-red-200 text-red-800 p-4" v-if="$page.errors.title">{{ $page.errors.title[0] }}</div>
                     </div>
 
                     <div class="mb-4">
@@ -25,6 +26,7 @@
                         Description de la formation
                       </label>
                       <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" v-model="form.description"></textarea>
+                      <div class="bg-red-200 text-red-800 p-4" v-if="$page.errors.description">{{ $page.errors.description[0] }}</div>
                     </div>
                     <div class="mb-4">
                         <h2 class="text-2xl">Episodes de la formation</h2>
@@ -43,11 +45,12 @@
                             <label class="block text-gray-700 text-sm font-bold mb-2" :for="'title-' + video_url">
                             URL de la vidéo du chapitre n° {{ index + 1 }}
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + video_url" type="text" v-model="form.chapters[index].video_url">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-10 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + video_url" type="text" v-model="form.chapters[index].video_url">
 
                         </div>
                     </div>
-                    <button class="py-2 px-4 bg-green-600 rounded my-2 text-white block" @click.prevent="add">+</button>
+                    <button class="py-2 px-4 bg-green-600 rounded my-2 text-white block" @click.prevent="add" v-if="form.chapters.length < 15">+</button>
+                    <button class="py-2 px-4 bg-red-600 rounded my-2 text-white block" @click.prevent="remove" v-if="form.chapters.length > 1">🗑️</button>
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Créer ma formation</button>
                   </form>
                 </div>
@@ -87,6 +90,9 @@
 
             add() {
                 this.form.chapters.push({title: null, description: null, video_url: null})
+            },
+            remove() {
+                this.form.chapters.pop()
             }
         }
     }
