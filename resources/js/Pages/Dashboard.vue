@@ -18,7 +18,7 @@
                         Titre de la formation
                       </label>
                       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" v-model="form.title">
-                      <div class="bg-red-200 text-red-800 p-4" v-if="$page.errors.title">{{ $page.errors.title[0] }}</div>
+                      <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors.title">{{ $page.errors.title[0] }}</div>
                     </div>
 
                     <div class="mb-4">
@@ -26,7 +26,7 @@
                         Description de la formation
                       </label>
                       <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" v-model="form.description"></textarea>
-                      <div class="bg-red-200 text-red-800 p-4" v-if="$page.errors.description">{{ $page.errors.description[0] }}</div>
+                      <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors.description">{{ $page.errors.description[0] }}</div>
                     </div>
                     <div class="mb-4">
                         <h2 class="text-2xl">Episodes de la formation</h2>
@@ -37,15 +37,21 @@
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + index" type="text" v-model="form.chapters[index].title">
 
+                            <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors['chapters.' + index + '.title']">{{ $page.errors['chapters.' + index + '.title'][0] }}</div>
+
                             <label class="block text-gray-700 text-sm font-bold mb-2" :for="'description-' + index">
                             Description du chapitre n° {{ index + 1 }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'description-' + index" type="text" v-model="form.chapters[index].description">
 
+                            <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors['chapters.' + index + '.description']">{{ $page.errors['chapters.' + index + '.description'][0] }}</div>
+
                             <label class="block text-gray-700 text-sm font-bold mb-2" :for="'title-' + video_url">
                             URL de la vidéo du chapitre n° {{ index + 1 }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-10 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + video_url" type="text" v-model="form.chapters[index].video_url">
+
+                            <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors['chapters.' + index + 'video_url']">{{ $page.errors['chapters.' + index + 'video_url'][0] }}</div>
 
                         </div>
                     </div>

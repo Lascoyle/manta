@@ -3585,6 +3585,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -26620,7 +26626,7 @@ var render = function() {
                   _vm.$page.errors.title
                     ? _c(
                         "div",
-                        { staticClass: "bg-red-200 text-red-800 p-4" },
+                        { staticClass: "bg-red-200 text-red-800 p-4 my-2" },
                         [_vm._v(_vm._s(_vm.$page.errors.title[0]))]
                       )
                     : _vm._e()
@@ -26666,7 +26672,7 @@ var render = function() {
                   _vm.$page.errors.description
                     ? _c(
                         "div",
-                        { staticClass: "bg-red-200 text-red-800 p-4" },
+                        { staticClass: "bg-red-200 text-red-800 p-4 my-2" },
                         [_vm._v(_vm._s(_vm.$page.errors.description[0]))]
                       )
                     : _vm._e()
@@ -26725,6 +26731,24 @@ var render = function() {
                           }
                         }),
                         _vm._v(" "),
+                        _vm.$page.errors["chapters." + index + ".title"]
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "bg-red-200 text-red-800 p-4 my-2"
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.$page.errors[
+                                      "chapters." + index + ".title"
+                                    ][0]
+                                  )
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
                         _c(
                           "label",
                           {
@@ -26770,6 +26794,24 @@ var render = function() {
                           }
                         }),
                         _vm._v(" "),
+                        _vm.$page.errors["chapters." + index + ".description"]
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "bg-red-200 text-red-800 p-4 my-2"
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.$page.errors[
+                                      "chapters." + index + ".description"
+                                    ][0]
+                                  )
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
                         _c(
                           "label",
                           {
@@ -26813,7 +26855,25 @@ var render = function() {
                               )
                             }
                           }
-                        })
+                        }),
+                        _vm._v(" "),
+                        _vm.$page.errors["chapters." + index + "video_url"]
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "bg-red-200 text-red-800 p-4 my-2"
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.$page.errors[
+                                      "chapters." + index + "video_url"
+                                    ][0]
+                                  )
+                                )
+                              ]
+                            )
+                          : _vm._e()
                       ])
                     })
                   ],
