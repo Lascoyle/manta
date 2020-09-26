@@ -8,8 +8,48 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
+                <div class="bg-green-200 text-green-500 p-3" v-if="$page.flash.success">
+                    {{ $page.flash.success }}
+                </div>
+                <div class="w-full">
+                  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="submit">
+                    <div class="mb-4">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                        Titre de la formation
+                      </label>
+                      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="title" type="text" v-model="form.title">
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+                        Description de la formation
+                      </label>
+                      <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" type="text" v-model="form.description"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <h2 class="text-2xl">Episodes de la formation</h2>
+                        <div v-for="(chapter, index) in form.chapters" v-bind:key="index">
+
+                            <label class="block text-gray-700 text-sm font-bold mb-2" :for="'title-' + index">
+                            Titre du chapitre n° {{ index + 1 }}
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + index" type="text" v-model="form.chapters[index].title">
+
+                            <label class="block text-gray-700 text-sm font-bold mb-2" :for="'description-' + index">
+                            Description du chapitre n° {{ index + 1 }}
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'description-' + index" type="text" v-model="form.chapters[index].description">
+
+                            <label class="block text-gray-700 text-sm font-bold mb-2" :for="'title-' + video_url">
+                            URL de la vidéo du chapitre n° {{ index + 1 }}
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + video_url" type="text" v-model="form.chapters[index].video_url">
+
+                        </div>
+                    </div>
+                    <button class="py-2 px-4 bg-green-600 rounded my-2 text-white block" @click.prevent="add">+</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Créer ma formation</button>
+                  </form>
                 </div>
             </div>
         </div>
@@ -18,12 +58,36 @@
 
 <script>
     import AppLayout from './../Layouts/AppLayout'
-    import Welcome from './../Jetstream/Welcome'
 
     export default {
         components: {
-            AppLayout,
-            Welcome,
+            AppLayout
         },
+
+        data() {
+            return {
+                form: {
+                    title: null,
+                    description: null,
+                    chapters: [
+                        {
+                            title:null,
+                            description: null,
+                            video_url: null
+                        }
+                    ]
+                }
+            }
+        },
+
+        methods: {
+            submit() {
+                this.$inertia.post('/courses', this.form)
+            },
+
+            add() {
+                this.form.chapters.push({title: null, description: null, video_url: null})
+            }
+        }
     }
 </script>
