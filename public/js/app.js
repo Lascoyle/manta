@@ -26857,15 +26857,17 @@ var render = function() {
                 [_vm._v("Voir la formation")]
               ),
               _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "bg-gray-600 rounded-md inline-block p-2 text-white text-sm mt-3 hover:bg-gray-800",
-                  attrs: { href: "courses/edit/" + course.id }
-                },
-                [_vm._v("Editer la formation")]
-              )
+              course.update
+                ? _c(
+                    "a",
+                    {
+                      staticClass:
+                        "bg-gray-600 rounded-md inline-block p-2 text-white text-sm mt-3 hover:bg-gray-800",
+                      attrs: { href: "courses/edit/" + course.id }
+                    },
+                    [_vm._v("Editer la formation")]
+                  )
+                : _vm._e()
             ])
           ])
         ])

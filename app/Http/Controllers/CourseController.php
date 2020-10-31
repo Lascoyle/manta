@@ -57,6 +57,7 @@ class CourseController extends Controller
     public function edit(int $id)
     {
         $course = Course::where('id', $id)->with('chapters')->first();
+        $this->authorize('update', $course);
 
         return Inertia::render('Courses/Edit', [
             'course' => $course
@@ -66,6 +67,8 @@ class CourseController extends Controller
     public function update(Request $request)
     {
         $course = Course::where('id', $request->id)->with('chapters')->first();
+        $this->authorize('update', $course);
+
         $course->update($request->all());
         $course->chapters()->delete();
 
