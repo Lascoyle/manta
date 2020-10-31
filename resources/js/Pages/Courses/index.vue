@@ -11,7 +11,10 @@
                     <p class="text-sm text-gray-400">{{ course.chapters_count }} Chapitres</p>
                 </div>
                 <p class="text-sm text-gray-500">{{ course.description }}</p>
-                <a :href="'course/' + course.id" class="bg-indigo-600 rounded-md inline-block p-2 text-white text-sm mt-3 hover:bg-indigo-800">Voir la formation</a>
+                <div class="flex items-center justify-between">
+                    <a :href="'course/' + course.id" class="bg-indigo-600 rounded-md inline-block p-2 text-white text-sm mt-3 hover:bg-indigo-800">Voir la formation</a>
+                    <a :href="'courses/edit/' + course.id" class="bg-gray-600 rounded-md inline-block p-2 text-white text-sm mt-3 hover:bg-gray-800">Editer la formation</a>
+                </div>
             </div>
         </div>
     </app-layout>

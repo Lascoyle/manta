@@ -51,7 +51,30 @@ class CourseController extends Controller
             Chapter::create($chapter);
         }
 
-        return Redirect::route('dashboard')->with('success', 'Félicitations, la formation a bien été mise en ligne.');
+        return Redirect::route('dashboard')->with('success', 'Félicitations, votre formation a bien été mise en ligne.');
+    }
+
+    public function edit(int $id)
+    {
+        $course = Course::where('id', $id)->with('chapters')->first();
+
+        return Inertia::render('Courses/Edit', [
+            'course' => $course
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $course = Course::where('id', $request->id)->with('chapters')->first();
+        $course->update($request->all());
+        $course->chapters()->delete();
+
+        foreach($request->chapters as $chapter) {
+            $chapter['course_id'] = $course->id;
+            Chapter::create($chapter);
+        }
+
+        return Redirect::route('dashboard')->with('success', 'Félicitations, votre formation a bien été modifiée.');
     }
 
     public function toggleProgress(Request $request)
