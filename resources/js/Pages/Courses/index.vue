@@ -3,7 +3,7 @@
         <template slot='header'>
             Liste des formations
         </template>
-        <div class="py-6" v-for="course in this.coursesList" v-bind:key="course.id">
+        <div class="py-6" v-for="course in this.coursesList.data" v-bind:key="course.id">
             <div class="mx-8 bg-white rounded-lg shadow p-6">
                 <p class="text-sm text-gray-500 mb-3">Mis en ligne par {{ course.user.name }}</p>
                 <div class="mb-3 flex justify-between items-baseline">
@@ -17,6 +17,11 @@
                 </div>
             </div>
         </div>
+        <div class="pagination text-center">
+            <inertia-link v-bind:href="link.url" v-for="link in courses.links" v-bind:key="link.label" class="p-3 text-gray-600">
+                <span v-bind:class="{ 'text-indigo-600 border-indigo-600 border-b-2 bold' : link.active, 'text-gray-400' : link.url===null }">{{ link.label }}</span>
+            </inertia-link>
+        </div>
     </app-layout>
 </template>
 
@@ -29,7 +34,7 @@ export default {
     },
 
     props : ['courses'],
-    
+
     data() {
         return {
             coursesList : this.courses

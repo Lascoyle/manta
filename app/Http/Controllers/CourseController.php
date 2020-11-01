@@ -14,7 +14,8 @@ class CourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::with('user')->withCount('chapters')->get();
+        $courses = Course::with('user')
+        ->withCount('chapters')->latest()->paginate(5);
 
         return Inertia::render('Courses/Index', [
             'courses' => $courses

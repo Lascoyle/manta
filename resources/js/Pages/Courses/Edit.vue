@@ -13,7 +13,8 @@
                 </div>
                 <div class="w-full">
                   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="submit">
-                    <div class="mb-4">
+                    <div class="mb-6">
+                      <h2 class="text-2xl mb-4">Libellé de la formation</h2>
                       <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                         Titre de la formation
                       </label>
@@ -29,24 +30,24 @@
                       <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors.description">{{ $page.errors.description[0] }}</div>
                     </div>
                     <div class="mb-4">
-                        <h2 class="text-2xl">Episodes de la formation</h2>
+                        <h2 class="text-2xl mt-14">Episodes de la formation</h2>
                         <div v-for="(chapter, index) in courseData.chapters" v-bind:key="index">
 
-                            <label class="block text-gray-700 text-sm font-bold mb-2" :for="'title-' + index">
+                            <label class="block text-gray-700 text-sm font-bold  mt-4" :for="'title-' + index">
                             Titre du chapitre n° {{ index + 1 }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + index" type="text" v-model="courseData.chapters[index].title">
 
                             <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors['chapters.' + index + '.title']">{{ $page.errors['chapters.' + index + '.title'][0] }}</div>
 
-                            <label class="block text-gray-700 text-sm font-bold mb-2" :for="'description-' + index">
+                            <label class="block text-gray-700 text-sm font-bold  mt-4" :for="'description-' + index">
                             Description du chapitre n° {{ index + 1 }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" :id="'description-' + index" type="text" v-model="courseData.chapters[index].description">
 
                             <div class="bg-red-200 text-red-800 p-4 my-2" v-if="$page.errors['chapters.' + index + '.description']">{{ $page.errors['chapters.' + index + '.description'][0] }}</div>
 
-                            <label class="block text-gray-700 text-sm font-bold mb-2" :for="'title-' + video_url">
+                            <label class="block text-gray-700 text-sm font-bold  mt-4" :for="'title-' + video_url">
                             URL de la vidéo du chapitre n° {{ index + 1 }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-10 leading-tight focus:outline-none focus:shadow-outline" :id="'title-' + video_url" type="text" v-model="courseData.chapters[index].video_url">

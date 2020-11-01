@@ -3369,6 +3369,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3409,6 +3410,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3634,6 +3640,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+//
 //
 //
 //
@@ -26440,7 +26447,11 @@ var render = function() {
                 }
               },
               [
-                _c("div", { staticClass: "mb-4" }, [
+                _c("div", { staticClass: "mb-6" }, [
+                  _c("h2", { staticClass: "text-2xl mb-4" }, [
+                    _vm._v("Libellé de la formation")
+                  ]),
+                  _vm._v(" "),
                   _c(
                     "label",
                     {
@@ -26540,7 +26551,7 @@ var render = function() {
                   "div",
                   { staticClass: "mb-4" },
                   [
-                    _c("h2", { staticClass: "text-2xl" }, [
+                    _c("h2", { staticClass: "text-2xl mt-14" }, [
                       _vm._v("Episodes de la formation")
                     ]),
                     _vm._v(" "),
@@ -26550,7 +26561,7 @@ var render = function() {
                           "label",
                           {
                             staticClass:
-                              "block text-gray-700 text-sm font-bold mb-2",
+                              "block text-gray-700 text-sm font-bold  mt-4",
                             attrs: { for: "title-" + index }
                           },
                           [
@@ -26613,7 +26624,7 @@ var render = function() {
                           "label",
                           {
                             staticClass:
-                              "block text-gray-700 text-sm font-bold mb-2",
+                              "block text-gray-700 text-sm font-bold  mt-4",
                             attrs: { for: "description-" + index }
                           },
                           [
@@ -26677,7 +26688,7 @@ var render = function() {
                           "label",
                           {
                             staticClass:
-                              "block text-gray-700 text-sm font-bold mb-2",
+                              "block text-gray-700 text-sm font-bold  mt-4",
                             attrs: { for: "title-" + _vm.video_url }
                           },
                           [
@@ -26821,7 +26832,7 @@ var render = function() {
         _vm._v("\n        Liste des formations\n    ")
       ]),
       _vm._v(" "),
-      _vm._l(this.coursesList, function(course) {
+      _vm._l(this.coursesList.data, function(course) {
         return _c("div", { key: course.id, staticClass: "py-6" }, [
           _c("div", { staticClass: "mx-8 bg-white rounded-lg shadow p-6" }, [
             _c("p", { staticClass: "text-sm text-gray-500 mb-3" }, [
@@ -26871,7 +26882,36 @@ var render = function() {
             ])
           ])
         ])
-      })
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "pagination text-center" },
+        _vm._l(_vm.courses.links, function(link) {
+          return _c(
+            "inertia-link",
+            {
+              key: link.label,
+              staticClass: "p-3 text-gray-600",
+              attrs: { href: link.url }
+            },
+            [
+              _c(
+                "span",
+                {
+                  class: {
+                    "text-indigo-600 border-indigo-600 border-b-2 bold":
+                      link.active,
+                    "text-gray-400": link.url === null
+                  }
+                },
+                [_vm._v(_vm._s(link.label))]
+              )
+            ]
+          )
+        }),
+        1
+      )
     ],
     2
   )
@@ -27140,6 +27180,10 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "mb-4" }, [
+                  _c("h2", { staticClass: "text-2xl mb-4" }, [
+                    _vm._v("Libellé de la formation")
+                  ]),
+                  _vm._v(" "),
                   _c(
                     "label",
                     {
@@ -27235,7 +27279,7 @@ var render = function() {
                   "div",
                   { staticClass: "mb-4" },
                   [
-                    _c("h2", { staticClass: "text-2xl" }, [
+                    _c("h2", { staticClass: "text-2xl mt-14" }, [
                       _vm._v("Episodes de la formation")
                     ]),
                     _vm._v(" "),
@@ -27245,7 +27289,7 @@ var render = function() {
                           "label",
                           {
                             staticClass:
-                              "block text-gray-700 text-sm font-bold mb-2",
+                              "block text-gray-700 text-sm font-bold mt-4",
                             attrs: { for: "title-" + index }
                           },
                           [
@@ -27306,7 +27350,7 @@ var render = function() {
                           "label",
                           {
                             staticClass:
-                              "block text-gray-700 text-sm font-bold mb-2",
+                              "block text-gray-700 text-sm font-bold  mt-4",
                             attrs: { for: "description-" + index }
                           },
                           [
@@ -27369,7 +27413,7 @@ var render = function() {
                           "label",
                           {
                             staticClass:
-                              "block text-gray-700 text-sm font-bold mb-2",
+                              "block text-gray-700 text-sm font-bold  mt-4",
                             attrs: { for: "title-" + _vm.video_url }
                           },
                           [
