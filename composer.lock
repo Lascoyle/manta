@@ -1121,16 +1121,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.5",
+            "version": "v1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "12c33249673f16cc1e01d6a3a0e92372153a2f92"
+                "reference": "9a5ec8d52145d5b59bc3f130b814f5f285bc71d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/12c33249673f16cc1e01d6a3a0e92372153a2f92",
-                "reference": "12c33249673f16cc1e01d6a3a0e92372153a2f92",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/9a5ec8d52145d5b59bc3f130b814f5f285bc71d4",
+                "reference": "9a5ec8d52145d5b59bc3f130b814f5f285bc71d4",
                 "shasum": ""
             },
             "require": {
@@ -1176,7 +1176,7 @@
                 "auth",
                 "laravel"
             ],
-            "time": "2021-01-19T15:01:25+00:00"
+            "time": "2021-02-16T15:20:27+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1344,16 +1344,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.1.4",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "5bac1016b90ee0148d5e7d950b04b814977918e7"
+                "reference": "36c46858b2dfd0b6b001872ce4d682a31221bb49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/5bac1016b90ee0148d5e7d950b04b814977918e7",
-                "reference": "5bac1016b90ee0148d5e7d950b04b814977918e7",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/36c46858b2dfd0b6b001872ce4d682a31221bb49",
+                "reference": "36c46858b2dfd0b6b001872ce4d682a31221bb49",
                 "shasum": ""
             },
             "require": {
@@ -1403,7 +1403,7 @@
                 "laravel",
                 "tailwind"
             ],
-            "time": "2021-02-09T16:34:48+00:00"
+            "time": "2021-02-16T18:36:07+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1769,16 +1769,16 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.35",
+            "version": "2.8.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "68a35170fdf36e7b35f9c125e5102338dbc3ff65"
+                "reference": "e55c155f4d1ab299a0cfca8ec29a0154918c9e3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/68a35170fdf36e7b35f9c125e5102338dbc3ff65",
-                "reference": "68a35170fdf36e7b35f9c125e5102338dbc3ff65",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/e55c155f4d1ab299a0cfca8ec29a0154918c9e3d",
+                "reference": "e55c155f4d1ab299a0cfca8ec29a0154918c9e3d",
                 "shasum": ""
             },
             "require": {
@@ -1817,7 +1817,7 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "time": "2021-01-25T19:09:34+00:00"
+            "time": "2021-02-13T14:35:52+00:00"
         },
         {
             "name": "monolog/monolog",
