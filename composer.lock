@@ -1349,16 +1349,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.3.11",
+            "version": "v2.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "dabc8118d91c0be0a697984f1fd9fdf25813851c"
+                "reference": "7446fc7c6e62457bf37fef22e0a0e96956dee089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/dabc8118d91c0be0a697984f1fd9fdf25813851c",
-                "reference": "dabc8118d91c0be0a697984f1fd9fdf25813851c",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/7446fc7c6e62457bf37fef22e0a0e96956dee089",
+                "reference": "7446fc7c6e62457bf37fef22e0a0e96956dee089",
                 "shasum": ""
             },
             "require": {
@@ -1366,7 +1366,7 @@
                 "illuminate/support": "^8.0",
                 "jenssegers/agent": "^2.6",
                 "laravel/fortify": "^1.6.1",
-                "league/commonmark": "^1.3",
+                "league/commonmark": "^1.3|^2.0",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
@@ -1408,7 +1408,7 @@
                 "laravel",
                 "tailwind"
             ],
-            "time": "2021-06-29T16:19:08+00:00"
+            "time": "2021-07-28T10:12:38+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1536,16 +1536,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.6.5",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "44ffd8d3c4a9133e4bd0548622b09c55af39db5f"
+                "reference": "c4228d11e30d7493c6836d20872f9582d8ba6dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/44ffd8d3c4a9133e4bd0548622b09c55af39db5f",
-                "reference": "44ffd8d3c4a9133e4bd0548622b09c55af39db5f",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c4228d11e30d7493c6836d20872f9582d8ba6dcf",
+                "reference": "c4228d11e30d7493c6836d20872f9582d8ba6dcf",
                 "shasum": ""
             },
             "require": {
@@ -1627,7 +1627,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-26T11:57:13+00:00"
+            "time": "2021-07-17T17:13:23+00:00"
         },
         {
             "name": "league/flysystem",
@@ -7392,6 +7392,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {
