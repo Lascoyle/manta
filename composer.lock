@@ -1126,16 +1126,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.14",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "3e187b3a440f6d41c3b4599ca5d6167a52289a4e"
+                "reference": "84649d53465bb4eae1b09357c98ceef56a41b680"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/3e187b3a440f6d41c3b4599ca5d6167a52289a4e",
-                "reference": "3e187b3a440f6d41c3b4599ca5d6167a52289a4e",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/84649d53465bb4eae1b09357c98ceef56a41b680",
+                "reference": "84649d53465bb4eae1b09357c98ceef56a41b680",
                 "shasum": ""
             },
             "require": {
@@ -1181,7 +1181,7 @@
                 "auth",
                 "laravel"
             ],
-            "time": "2021-06-29T16:14:35+00:00"
+            "time": "2021-08-10T17:23:06+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1349,16 +1349,16 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.3.11",
+            "version": "v2.3.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "dabc8118d91c0be0a697984f1fd9fdf25813851c"
+                "reference": "6318fc4a734ef894f38d0298f2dee42f7ee0e90c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/dabc8118d91c0be0a697984f1fd9fdf25813851c",
-                "reference": "dabc8118d91c0be0a697984f1fd9fdf25813851c",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/6318fc4a734ef894f38d0298f2dee42f7ee0e90c",
+                "reference": "6318fc4a734ef894f38d0298f2dee42f7ee0e90c",
                 "shasum": ""
             },
             "require": {
@@ -1366,7 +1366,6 @@
                 "illuminate/support": "^8.0",
                 "jenssegers/agent": "^2.6",
                 "laravel/fortify": "^1.6.1",
-                "league/commonmark": "^1.3",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
@@ -1408,7 +1407,7 @@
                 "laravel",
                 "tailwind"
             ],
-            "time": "2021-06-29T16:19:08+00:00"
+            "time": "2021-08-17T15:53:22+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1536,16 +1535,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.6.5",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "44ffd8d3c4a9133e4bd0548622b09c55af39db5f"
+                "reference": "c4228d11e30d7493c6836d20872f9582d8ba6dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/44ffd8d3c4a9133e4bd0548622b09c55af39db5f",
-                "reference": "44ffd8d3c4a9133e4bd0548622b09c55af39db5f",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c4228d11e30d7493c6836d20872f9582d8ba6dcf",
+                "reference": "c4228d11e30d7493c6836d20872f9582d8ba6dcf",
                 "shasum": ""
             },
             "require": {
@@ -1627,7 +1626,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-26T11:57:13+00:00"
+            "time": "2021-07-17T17:13:23+00:00"
         },
         {
             "name": "league/flysystem",
